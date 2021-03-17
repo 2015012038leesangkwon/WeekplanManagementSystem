@@ -18,7 +18,7 @@ public class WeekPlanMenuManagement {
 		    String weekdate = input.next();
 			System.out.print("Week plan : ");
 			String weekplan = input.next();
-			System.out.print("∏∂∞®¿œ : ");
+			System.out.print("when week plan end ?  : ");
 		    String enddate = input.next();
 			break;
 		case 2:
