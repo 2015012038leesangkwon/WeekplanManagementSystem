@@ -109,7 +109,7 @@ public class WeekPlanManager {
 					num = input.nextInt();
 									
 					if(num == 1){
-						System.out.print("Start date(YY/MM/DD) :");
+						System.out.print("Start date :");
 						int sdates = input.nextInt();
 						weekplan.setSdate(sdates);
 					}
@@ -120,7 +120,7 @@ public class WeekPlanManager {
 						weekplan.setWeekplan(weekplan1);
 					}					
 					else if(num ==3) {						
-						System.out.print("End plan(YY/MM/DD) :");
+						System.out.print("End plan :");
 						int edates = input.nextInt();
 						weekplan.setEdate(edates);
 					}
