@@ -3,6 +3,9 @@ package WeekPlan;
 import java.util.Scanner;
 
 public class Etc extends Weekplan {
+	public Etc(Weekplanfind kind) {
+		super(kind);
+	}
 	
 
 	public void getUserInput(Scanner input) {
