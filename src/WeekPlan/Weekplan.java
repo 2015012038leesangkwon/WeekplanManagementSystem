@@ -11,6 +11,9 @@ public class Weekplan {
 	protected int sdate;
 	protected String weekplan;
 	protected int edate;
+	public Weekplan(Weekplanfind kind) {
+		this.kind = kind;
+	}
 	
 	public Weekplanfind getKind() {
 		return kind;
@@ -62,10 +65,34 @@ public class Weekplan {
 		this.weekplan = weekplan;
 		this.edate = edate;
 	}
+	public Weekplan(Weekplanfind kind, int weeknum, int sdate, String weekplan, int edate) {
+		this.kind = kind;
+		this.weeknum = weeknum;
+		this.sdate = sdate;
+		this.weekplan = weekplan;
+		this.edate = edate;
+	}
 
-
+	
 	public void printInfo() {
-		System.out.println("number : " + weeknum + " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
+		String skind = "none";
+		switch(this.kind) {
+		case OOPHomework:
+			skind = "OOP";
+			break;
+		case MaterialmechanicsHomwork:
+			skind = "Materialmechanics";
+			break;
+		case ComprehensivedesignReport:
+			skind = "ComprehensivedesignReport";
+			break;
+		case etc:
+			skind = "etc";
+			break;
+		default:
+			
+		}
+		System.out.println ("number : " + weeknum +" /Object : "+ skind+ " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
 	}
 	public void getUserInput(Scanner input) {
 		System.out.print("number : ");
