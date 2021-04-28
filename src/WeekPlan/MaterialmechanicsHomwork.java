@@ -3,6 +3,9 @@ package WeekPlan;
 import java.util.Scanner;
 
 public class MaterialmechanicsHomwork extends Weekplan {
+	public MaterialmechanicsHomwork(Weekplanfind kind) {
+		super(kind);
+	}
 	public void getUserInput(Scanner input) {
 		System.out.print("number : ");
 	    int weeknum = input.nextInt();
