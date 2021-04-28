@@ -4,7 +4,9 @@ import java.util.Scanner;
 import WeekPlan.ComprehensivedesignReport;
 import WeekPlan.Etc;
 import WeekPlan.MaterialmechanicsHomwork;
+import WeekPlan.OOP;
 import WeekPlan.Weekplan;
+import WeekPlan.Weekplanfind;
 
 public class WeekPlanManager {
 	ArrayList<Weekplan> weekplans = new ArrayList<Weekplan>();
@@ -24,26 +26,26 @@ public class WeekPlanManager {
 			System.out.print("Select Week Plan Kind between1 and 4 : ");
 			kind = input.nextInt();
 			if(kind ==1) {
-				weekplan1 = new Weekplan();
+				weekplan1 = new OOP(Weekplanfind.OOPHomework);
 				weekplan1.getUserInput(input);
 				weekplans.add(weekplan1);
 				break;
 				
 			}
 			else if(kind ==2) {
-				weekplan1 = new MaterialmechanicsHomwork();
+				weekplan1 = new MaterialmechanicsHomwork(Weekplanfind.MaterialmechanicsHomwork);
 				weekplan1.getUserInput(input);
 				weekplans.add(weekplan1);
 				break;
 			}
 			else if(kind ==3) {
-				weekplan1 = new ComprehensivedesignReport();
+				weekplan1 =new ComprehensivedesignReport(Weekplanfind.ComprehensivedesignReport);
 				weekplan1.getUserInput(input);
 				weekplans.add(weekplan1);
 				break;
 			}
 			else if(kind ==4) {
-				weekplan1 = new Etc();
+				weekplan1 =  new Etc(Weekplanfind.etc);
 				weekplan1.getUserInput(input);
 				weekplans.add(weekplan1);
 				break;
@@ -105,7 +107,7 @@ public class WeekPlanManager {
 					System.out.println("2.Edit week plan ");					
 					System.out.println("3.Edit end date ");					
 					System.out.println("4.EXit ");
-					System.out.print("select one number between 1-3:");
+					System.out.print("select one number between 1-4:");
 					num = input.nextInt();
 									
 					if(num == 1){
