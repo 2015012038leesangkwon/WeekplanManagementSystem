@@ -43,7 +43,7 @@ public class OOP extends Weekplan {
 	    }
 	    answer= 'x';
 	    while(answer !='y'&&answer!='Y'&&answer!='n'&&answer!='N') {
-	    System.out.print(" This Plan is Project Report  ? (Y/N) : ");
+	    System.out.print("This Plan is Project Report  ? (Y/N) : ");
 	    answer = input.next().charAt(0);
 	    if(answer == 'Y'||answer == 'y') {
 	    	System.out.print("When Project report starts? : ");
@@ -88,7 +88,7 @@ public class OOP extends Weekplan {
 			
 		}
 		System.out.println ("number : " + weeknum +" /Object : "+ skind+ " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
-		System.out.println("Project Started date : " + sdate +" /Project plan : "+weekplan+" /Project ended date : "+edate);
+		System.out.println("=> Project Started date : " + sdate +" /Project plan : "+weekplan+" /Project ended date : "+edate);
 	}
 	}
 
