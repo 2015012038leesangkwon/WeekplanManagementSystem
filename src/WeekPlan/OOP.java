@@ -2,7 +2,7 @@ package WeekPlan;
 
 import java.util.Scanner;
 
-public class OOP extends Weekplan {
+public class OOP extends Weekplan implements Weekplaninput {
 	public OOP(Weekplanfind kind) {
 		super(kind);
 	}
