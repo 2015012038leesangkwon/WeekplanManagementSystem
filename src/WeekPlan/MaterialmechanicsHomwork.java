@@ -2,7 +2,7 @@ package WeekPlan;
 
 import java.util.Scanner;
 
-public class MaterialmechanicsHomwork extends Weekplan {
+public class MaterialmechanicsHomwork extends Weekplan implements Weekplaninput {
 	public MaterialmechanicsHomwork(Weekplanfind kind) {
 		super(kind);
 	}
@@ -39,6 +39,26 @@ public class MaterialmechanicsHomwork extends Weekplan {
 	    }
 		
 		
+	}
+	public void printInfo() {
+		String skind = "none";
+		switch(this.kind) {
+		case OOPHomework:
+			skind = "OOP";
+			break;
+		case MaterialmechanicsHomwork:
+			skind = "Materialmechanics";
+			break;
+		case ComprehensivedesignReport:
+			skind = "ComprehensivedesignReport";
+			break;
+		case etc:
+			skind = "etc";
+			break;
+		default:
+			
+		}
+		System.out.println ("number : " + weeknum +" /Object : "+ skind+ " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
 	}
 
 }
