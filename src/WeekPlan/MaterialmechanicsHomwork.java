@@ -41,6 +41,10 @@ public class MaterialmechanicsHomwork extends Weekplan implements Weekplaninput 
 		
 	}
 	public void printInfo() {
+		String skind = getkindString();
+		System.out.println ("number : " + weeknum +" /Object : "+ skind+ " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
+	}
+	public String getkindString() {
 		String skind = "none";
 		switch(this.kind) {
 		case OOPHomework:
@@ -58,7 +62,8 @@ public class MaterialmechanicsHomwork extends Weekplan implements Weekplaninput 
 		default:
 			
 		}
-		System.out.println ("number : " + weeknum +" /Object : "+ skind+ " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
+		return skind;
+		
 	}
 
 }
