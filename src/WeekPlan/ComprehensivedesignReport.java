@@ -71,6 +71,13 @@ public class ComprehensivedesignReport extends Weekplan implements Weekplaninput
 		
 	}
 	public void printInfo() {
+		String skind = getkindString();
+		System.out.println ("number : " + weeknum +" /Object : "+ skind+ " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
+		System.out.println("=> 발표준비 시작일 : " + sdate +" /발표내용 : "+weekplan+" /발표준비 마감일 : "+edate);
+
+	
+}
+	public String getkindString() {
 		String skind = "none";
 		switch(this.kind) {
 		case OOPHomework:
@@ -88,9 +95,7 @@ public class ComprehensivedesignReport extends Weekplan implements Weekplaninput
 		default:
 			
 		}
-		System.out.println ("number : " + weeknum +" /Object : "+ skind+ " /Week plan : "+ weekplan+ " /Week date : " + sdate + " /End date : " + edate);
-		System.out.println("=> 발표준비 시작일 : " + sdate +" /발표내용 : "+weekplan+" /발표준비 마감일 : "+edate);
-
-	
-}
+		return skind;
+		
+	}
 }
