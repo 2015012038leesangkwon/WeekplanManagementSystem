@@ -36,6 +36,7 @@ public abstract class Weekplan {
 	}
 
 	public void setSdate(int sdate) {
+		
 		this.sdate = sdate;
 	}
 
@@ -44,6 +45,7 @@ public abstract class Weekplan {
 	}
 
 	public void setWeekplan(String weekplan) {
+		
 		this.weekplan = weekplan;
 	}
 
