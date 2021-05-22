@@ -1,3 +1,5 @@
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,9 +12,15 @@ import WeekPlan.Weekplan;
 import WeekPlan.Weekplanfind;
 import WeekPlan.Weekplaninput;
 
-public class WeekPlanManager {
+public class WeekPlanManager implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8469621747413754917L;
+	
 	ArrayList<Weekplaninput> weekplans = new ArrayList<Weekplaninput>();
-	Scanner input;
+	transient Scanner input;
 	WeekPlanManager(Scanner input){
 		this.input = input;
 		
