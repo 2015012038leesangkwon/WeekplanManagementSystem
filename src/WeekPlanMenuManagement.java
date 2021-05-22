@@ -1,13 +1,33 @@
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import log.EventLogger;
+
+
+
 public class WeekPlanMenuManagement {
-	public static void main(String[]args) {		
+	static EventLogger logger = new EventLogger("log.txt");
+	
+	public static void main(String[]args) {	
+		
+	
 			
 		Scanner input = new Scanner(System.in);
-		WeekPlanManager weekplanmanager = new WeekPlanManager(input);
+		WeekPlanManager weekplanmanager = getobject("weekplanmanager.ser");
+		if(weekplanmanager == null) {
+			weekplanmanager = new WeekPlanManager(input);
+		}
+				
 		
 		selectmenu(input, weekplanmanager);
+		putobject(weekplanmanager,"weekplanmanager.ser");
 
 	}
 	public static void selectmenu(Scanner input, WeekPlanManager weekplanmanager) {
@@ -20,17 +40,20 @@ public class WeekPlanMenuManagement {
 		switch(num) {
 		case 1:
 			weekplanmanager.addWeekplan();
-			
+			logger.log("add Weekly Plan");
 			break;
 		case 2:
 			weekplanmanager.deleteWeekplan();
+			logger.log("delete Weekly Plan");
 			break;
 			
 		case 3:
 			weekplanmanager.viewWeekplans();
+			logger.log("view Weekly Plan");
 			break;
 		case 4:
 			weekplanmanager.EditWeekplan();
+			logger.log("edit Weekly Plan");
 			break;
 		case 5:
 			System.out.println("Exit");
@@ -62,6 +85,45 @@ public class WeekPlanMenuManagement {
 		System.out.print("select one number between 1-5:");
 		
 	}
+	public static WeekPlanManager getobject(String filename) {
+		WeekPlanManager weekplanmanager = null;
+		
+		
+		FileInputStream file;
+		try {
+			file = new FileInputStream(filename);
+			ObjectInputStream in = new ObjectInputStream(file);
+			 weekplanmanager=(WeekPlanManager)in.readObject();
+			 in.close();
+			 file.close();
+		} catch (FileNotFoundException e) {
+			return weekplanmanager;
+		}
+		 catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		return weekplanmanager;
+	}
+	public static void putobject(WeekPlanManager weekplanmanager, String filename) {
+		
+		try {
+			FileOutputStream file = new FileOutputStream(filename);
+			ObjectOutputStream out = new ObjectOutputStream(file);
+			 out.writeObject(weekplanmanager);
+			 out.close();
+			 file.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		 catch (IOException e) {
+			e.printStackTrace();
+		}
+	
+	}
+	
 	
 
 
