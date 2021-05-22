@@ -2,9 +2,11 @@ package WeekPlan;
 
 import java.util.Scanner;
 
+
+
 public interface Weekplaninput {
 	
-	public void getUserInput(Scanner input);
+public void getUserInput(Scanner input);
 	
 	public int getWeeknum();
 	
@@ -15,6 +17,7 @@ public interface Weekplaninput {
 	public void setEdate(int edate);
 	
 	public void printInfo();
+	
 	
 	
 
