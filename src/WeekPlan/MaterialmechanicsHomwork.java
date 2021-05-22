@@ -2,7 +2,9 @@ package WeekPlan;
 
 import java.util.Scanner;
 
-public class MaterialmechanicsHomwork extends Weekplan implements Weekplaninput {
+
+
+public class MaterialmechanicsHomwork extends Weekplan {
 	public MaterialmechanicsHomwork(Weekplanfind kind) {
 		super(kind);
 	}
