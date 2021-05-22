@@ -2,6 +2,8 @@ package WeekPlan;
 
 import java.util.Scanner;
 
+
+
 public class Etc extends Weekplan implements Weekplaninput {
 	public Etc(Weekplanfind kind) {
 		super(kind);
@@ -17,7 +19,9 @@ public class Etc extends Weekplan implements Weekplaninput {
  	    this.setSdate(sdate);
  	   System.out.print("Week plan : ");
 		String weekplan = input.next();
-		this.setWeekplan(weekplan);
+		
+			this.setWeekplan(weekplan);
+		
  	   System.out.print("When week plan end? : ");
 	    int edate = input.nextInt();
 	    this.setEdate(edate);
