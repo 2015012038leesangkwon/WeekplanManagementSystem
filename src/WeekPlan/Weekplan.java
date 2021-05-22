@@ -1,11 +1,18 @@
 package WeekPlan;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Weekplan {
+
+public abstract class Weekplan implements Weekplaninput, Serializable {
 	
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7377365813405593446L;
+	
 	protected Weekplanfind kind = Weekplanfind.OOPHomework;
 	protected int weeknum;
 	protected int sdate;
