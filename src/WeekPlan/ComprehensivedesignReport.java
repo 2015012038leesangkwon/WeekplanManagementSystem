@@ -2,7 +2,9 @@ package WeekPlan;
 
 import java.util.Scanner;
 
-public class ComprehensivedesignReport extends Weekplan implements Weekplaninput {
+
+
+public class ComprehensivedesignReport extends Weekplan {
 	public ComprehensivedesignReport(Weekplanfind kind) {
 		super(kind);
 	}
