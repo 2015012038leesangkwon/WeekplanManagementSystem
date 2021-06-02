@@ -1,3 +1,4 @@
+package Manager;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+import GUI.Windowframe;
 import log.EventLogger;
 
 
@@ -25,7 +28,7 @@ public class WeekPlanMenuManagement {
 			weekplanmanager = new WeekPlanManager(input);
 		}
 				
-		
+		Windowframe wf = new Windowframe(weekplanmanager);
 		selectmenu(input, weekplanmanager);
 		putobject(weekplanmanager,"weekplanmanager.ser");
 
