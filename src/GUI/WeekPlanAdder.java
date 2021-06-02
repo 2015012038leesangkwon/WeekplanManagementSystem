@@ -7,8 +7,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class WeekPlanAdder extends JFrame {
-	public WeekPlanAdder() {
+public class WeekPlanAdder extends JPanel {
+	Windowframe f;
+	
+	public WeekPlanAdder(Windowframe f) {
+		this.f = f;
+		
 		JPanel p = new JPanel();
 		p.setLayout(new SpringLayout());
 		
@@ -41,9 +45,8 @@ public class WeekPlanAdder extends JFrame {
 		
 		SpringUtilities.makeCompactGrid(p,5,2,6,6,6,6);
 		
-		 this.setSize(300,300);
-		 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		 this.setContentPane(p);
+		 
+		 this.add(p);
 		 this.setVisible(true);
 	}
 
