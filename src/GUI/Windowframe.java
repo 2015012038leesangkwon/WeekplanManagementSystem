@@ -19,7 +19,7 @@ public class Windowframe extends JFrame {
 		 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 this.w = w;
 		 this.ms = new MenuSelection(this);
-		 this.sa = new WeekPlanAdder(this);
+		 this.sa = new WeekPlanAdder(this,this.w);
 	     this.wv = new WeekPlanVeiwer(this,this.w);
 	    
 		this.setupPanel(ms);
