@@ -1,3 +1,4 @@
+package Manager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,6 +25,16 @@ public class WeekPlanManager implements Serializable {
 	WeekPlanManager(Scanner input){
 		this.input = input;
 		
+	}
+	public void addWeekplan(int weeknum, String sdate, String plan, String edate) {
+		Weekplaninput weekplaninput = new OOP(Weekplanfind.OOPHomework);
+		weekplaninput.getUserInput(input);
+		weekplans.add(weekplaninput);
+	}
+	public void addWeekplan(Weekplaninput winput) {
+		Weekplaninput weekplaninput = new OOP(Weekplanfind.OOPHomework);
+		weekplaninput.getUserInput(input);
+		weekplans.add(weekplaninput);
 	}
 	public void addWeekplan() {	
 		int kind =0;
@@ -188,6 +199,12 @@ public class WeekPlanManager implements Serializable {
 		int edates = input.nextInt();
 		edate.setEdate(edates);
 		
+	}
+	public int size() {
+		return weekplans.size();
+	}
+	public Weekplaninput get(int index) {
+		return (Weekplan) weekplans.get(index);
 	}
 
 
