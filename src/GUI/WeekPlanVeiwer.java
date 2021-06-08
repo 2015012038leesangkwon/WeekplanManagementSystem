@@ -16,6 +16,15 @@ public class WeekPlanVeiwer extends JPanel {
 	Windowframe f;
 	 WeekPlanManager w;
 
+	public WeekPlanManager getW() {
+		return w;
+	}
+
+	public void setW(WeekPlanManager w) {
+		this.w = w;
+		
+	}
+
 	public  WeekPlanVeiwer(Windowframe f,  WeekPlanManager w) {
 		this.f = f;
 		this.w = w;
@@ -43,6 +52,7 @@ public class WeekPlanVeiwer extends JPanel {
 		JScrollPane sp = new JScrollPane(t);
 		
 		this.add(sp);
+		
 			
 	}
 }
