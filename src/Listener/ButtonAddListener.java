@@ -18,9 +18,11 @@ public class ButtonAddListener implements ActionListener {
 
 	
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton)e.getSource();
-		WeekPlanAdder viewer = f.getSa();
-		f.setupPanel(viewer);
+		
+		f.getContentPane().removeAll();
+		f.getContentPane().add(f.getSa());
+		f.revalidate();
+		f.repaint();
 		
 	}
 
