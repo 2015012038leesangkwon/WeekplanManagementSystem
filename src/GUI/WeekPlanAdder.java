@@ -7,11 +7,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import Listener.WeekPlanadderListener;
+import Manager.WeekPlanManager;
+
 public class WeekPlanAdder extends JPanel {
 	Windowframe f;
+	 WeekPlanManager w;
 	
-	public WeekPlanAdder(Windowframe f) {
+	public WeekPlanAdder(Windowframe f, WeekPlanManager w) {
 		this.f = f;
+		this.w = w;
 		
 		JPanel p = new JPanel();
 		p.setLayout(new SpringLayout());
@@ -37,11 +42,17 @@ public class WeekPlanAdder extends JPanel {
 		JLabel labeledate = new JLabel("Ended Date: ", JLabel.TRAILING);
 		JTextField filededate = new JTextField(10);
 		labeledate.setLabelFor(filededate);
+		
+		JButton save = new JButton("save");
+		save.addActionListener(new WeekPlanadderListener(filednum,filedsdate,filedplan,filededate,w));
+		JButton cancel = new JButton("Cancel");
+		cancel.addActionListener(new ButtonAddcancelListener(f));
+		
 		p.add(labeledate);
 		p.add(filededate);
 		
-		p.add(new JButton("save"));
-		p.add(new JButton("Cancel"));
+		p.add(save);
+		p.add(cancel);
 		
 		SpringUtilities.makeCompactGrid(p,5,2,6,6,6,6);
 		
